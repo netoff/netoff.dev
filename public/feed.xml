@@ -1,0 +1,34 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>netoff | Software Engineer</title>
+      <link>https://tailwind-nextjs-starter-blog.vercel.app/blog</link>
+      <description>Dusan Pantelic - Software Engineer for life</description>
+      <language>en-us</language>
+      <managingEditor>me@netoff.dev (Dusan Pantelic)</managingEditor>
+      <webMaster>me@netoff.dev (Dusan Pantelic)</webMaster>
+      <lastBuildDate>Mon, 15 Mar 2021 00:00:00 GMT</lastBuildDate>
+      <atom:link href="https://tailwind-nextjs-starter-blog.vercel.app/feed.xml" rel="self" type="application/rss+xml"/>
+      
+  <item>
+    <guid>https://tailwind-nextjs-starter-blog.vercel.app/blog/2021-03-15-modern-rails-manifesto</guid>
+    <title>Modern Rails Manifesto</title>
+    <link>https://tailwind-nextjs-starter-blog.vercel.app/blog/2021-03-15-modern-rails-manifesto</link>
+    <description>At RubySoft, we strongly believe there is a right way to do Rails.</description>
+    <pubDate>Mon, 15 Mar 2021 00:00:00 GMT</pubDate>
+    <author>me@netoff.dev (Dusan Pantelic)</author>
+    <category>rails</category><category>tests</category>
+  </item>
+
+  <item>
+    <guid>https://tailwind-nextjs-starter-blog.vercel.app/blog/2021-03-01-goodbye-bootstrapping-turbostrapping-is-here</guid>
+    <title>Goodbye Bootstrapping, Turbostrapping is here</title>
+    <link>https://tailwind-nextjs-starter-blog.vercel.app/blog/2021-03-01-goodbye-bootstrapping-turbostrapping-is-here</link>
+    <description>Or, how we can help you build your SaaS business within only 3 weeks and make your dreams become a reality.</description>
+    <pubDate>Mon, 01 Mar 2021 00:00:00 GMT</pubDate>
+    <author>me@netoff.dev (Dusan Pantelic)</author>
+    <category>rails</category><category>hotwire</category><category>turbo</category>
+  </item>
+
+    </channel>
+  </rss>

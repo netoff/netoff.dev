@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: Roboto, sans-serif;
+}
+
+.main-nav-link {
+  @apply mr-2 text-blue-600 underline;
+}
+
+.skill {
+  @apply h-4 w-4 cursor-pointer md:h-8 md:w-8;
+}
+
+.button {
+  @apply block w-full rounded-full bg-blue-700 py-2 px-4 font-bold text-white hover:bg-blue-900 md:inline md:w-auto;
+}
+
+.link {
+  @apply text-blue-600 underline;
+}
+
+.task-list-item::before {
+  @apply hidden;
+}
+
+.task-list-item {
+  @apply list-none;
+}
+
+.footnotes {
+  @apply mt-12 border-t border-gray-200 pt-8 dark:border-gray-700;
+}
+
+.csl-entry {
+  @apply my-5;
+}
+
+/* https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
