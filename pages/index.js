@@ -16,10 +16,10 @@ export default function Home() {
 
         <Image src={background} layout="fill" priority alt="Road to freedom" />
 
-        <div className="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-24 lg:my-0">    
-          <div id="profile" className="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg shadow-2xl bg-white mx-6 lg:mx-0 z-10" style={{backgroundColor: "rgba(255, 255, 255, .7)"}}>    
+        <div className="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto mt-12 lg:my-0">    
+          <div id="profile" className="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg shadow-2xl bg-white mx-6 lg:mx-0 z-10 mb-8 lg:mb-0" style={{backgroundColor: "rgba(255, 255, 255, .7)"}}>    
             <div className="p-4 md:p-12 text-center lg:text-left">
-              <div className="block lg:hidden rounded-full shadow-xl mx-auto -mt-24 h-48 w-48 bg-cover bg-center border border-blue-400 bg-white" >
+              <div className="block lg:hidden rounded-full shadow-xl mx-auto -mt-12 md:-mt-24 h-32 w-32 bg-cover bg-center border border-blue-400 bg-white" >
                 <Image src={me} title="Dusan Pantelic" alt="Dusan Pantelic" className="rounded-full bg-white" />
               </div>
               
@@ -67,7 +67,7 @@ export default function Home() {
               </p>
               */}
 
-              <div className="mt-6 pb-16 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-left justify-between">
+              <div className="mt-6 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-left justify-between">
                 <span className='hidden lg:block'>Skills: </span>
                 {[
                   'html5',
