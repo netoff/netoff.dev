@@ -67,7 +67,7 @@ export default function Home() {
               </p>
               */}
 
-              <div className="mt-6 pb-16 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-between">
+              <div className="mt-6 pb-16 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-left justify-between">
                 <span className='hidden lg:block'>Skills: </span>
                 {[
                   'html5',
@@ -82,7 +82,9 @@ export default function Home() {
                   'amazonwebservices',
                   'heroku',
                   ].map(lang => 
-                    <Image key={lang} title={lang} alt={lang} width="32" height="32" className="skill" src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${lang}/${lang}-original.svg`} />
+                    <div className='skill' key={lang}>
+                      <Image title={lang} alt={lang} width="32" height="32" src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${lang}/${lang}-original.svg`} />
+                    </div>
                   )}
                 
                 </div>
