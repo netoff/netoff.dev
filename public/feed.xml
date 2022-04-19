@@ -7,9 +7,19 @@
       <language>en-us</language>
       <managingEditor>me@netoff.dev (Dusan Pantelic)</managingEditor>
       <webMaster>me@netoff.dev (Dusan Pantelic)</webMaster>
-      <lastBuildDate>Mon, 15 Mar 2021 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Wed, 20 Apr 2022 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://netoff.dev/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://netoff.dev/blog/2022-04-20-hotwire-is-here-to-stay</guid>
+    <title>Hotwire: It is here to stay</title>
+    <link>https://netoff.dev/blog/2022-04-20-hotwire-is-here-to-stay</link>
+    <description>It’s been four months since Rails 7 was released</description>
+    <pubDate>Wed, 20 Apr 2022 00:00:00 GMT</pubDate>
+    <author>me@netoff.dev (Dusan Pantelic)</author>
+    <category>rails</category><category>hotwire</category>
+  </item>
+
   <item>
     <guid>https://netoff.dev/blog/2021-03-15-modern-rails-manifesto</guid>
     <title>Modern Rails Manifesto</title>
