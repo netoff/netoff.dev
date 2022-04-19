@@ -9,6 +9,8 @@ import developerImage from '/public/images/nubelson-fernandes-UcYBL5V0xWQ-unspla
 import background from '/public/images/bruno-bergher--8ttvM3Ca94-unsplash.jpg'
 import me from '/public/images/dusan.png'
 
+import MobileNav from '@/components/MobileNav'
+
 export default function Home() {
   return (
     <div className="relative h-full bg-gray-900 leading-normal tracking-wider text-gray-900 antialiased">
@@ -25,6 +27,8 @@ export default function Home() {
           className="z-10 mx-6 mb-8 w-full rounded-lg bg-white shadow-2xl lg:mx-0 lg:mb-0 lg:w-3/5 lg:rounded-l-lg"
           style={{ backgroundColor: 'rgba(255, 255, 255, .7)' }}
         >
+          <MobileNav />
+
           <div className="p-4 text-center md:p-8 lg:text-left">
             <div className="mb-8 flex hidden lg:ml-8 lg:flex">
               <div className="mr-2">netoff.dev</div>
