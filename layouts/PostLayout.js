@@ -8,6 +8,8 @@ import siteMetadata from '@/data/siteMetadata'
 import Comments from '@/components/comments'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 
+// import Image from '@/components/Image'
+
 const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/blog/${fileName}`
 const discussUrl = (slug) =>
   `https://mobile.twitter.com/search?q=${encodeURIComponent(
@@ -17,7 +19,16 @@ const discussUrl = (slug) =>
 const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
-  const { slug, fileName, date, title, tags } = frontMatter
+  const {
+    slug,
+    fileName,
+    date,
+    title,
+    tags,
+    thumbnail,
+    thumbnail_attribution_id,
+    thumbnail_author,
+  } = frontMatter
 
   return (
     <SectionContainer>
@@ -43,6 +54,24 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               </dl>
               <div>
                 <PageTitle>{title}</PageTitle>
+                {thumbnail ? (
+                  <>
+                    <Image
+                      layout="responsive"
+                      width={640}
+                      height={480}
+                      src={`/images/blog/${thumbnail}`}
+                      alt={title}
+                    />
+                    <div className="text-left text-xs text-gray-800 dark:text-gray-200">
+                      Photo by{' '}
+                      <a href={`https://unsplash.com/photos/${thumbnail_attribution_id}`}>
+                        {thumbnail_author}
+                      </a>{' '}
+                      on <a href="https://unsplash.com/">Unsplash</a>
+                    </div>
+                  </>
+                ) : null}
               </div>
             </div>
           </header>

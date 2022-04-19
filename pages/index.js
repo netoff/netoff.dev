@@ -11,13 +11,13 @@ import me from '/public/images/dusan.png'
 
 export default function Home() {
   return (
-    <div className="relative h-full bg-gray-200 leading-normal tracking-wider text-gray-900 antialiased">
+    <div className="relative h-full bg-gray-900 leading-normal tracking-wider text-gray-900 antialiased">
       <Head>
         <Favicon />
         <title>netoff | Software Engineer</title>
       </Head>
 
-      <Image src={background} layout="fill" alt="Road to freedom" />
+      {/* <Image src={background} layout="fill" alt="Road to freedom" /> */}
 
       <div className="mx-auto mt-12 flex h-auto max-w-4xl flex-wrap items-center lg:my-0 lg:h-screen">
         <div
@@ -27,6 +27,7 @@ export default function Home() {
         >
           <div className="p-4 text-center md:p-8 lg:text-left">
             <div className="mb-8 ml-8 flex hidden lg:flex">
+              <div className="mr-2">netoff.dev</div>
               <div className="main-nav-link">
                 <Link href={'/blog'}>Blog</Link>
               </div>
@@ -112,15 +113,6 @@ export default function Home() {
               </li>
             </ul>
 
-            {/* <p className="pt-4 text-sm">
-                <a className="text-blue-600" href="#">Read more about myself…</a>
-                I am the Ruby School and Turbo Funnel creator, and I running them passionately is what 
-                I do day to day. Ruby School is the easiest way for non-programmers (e.g., non-technical founders) 
-                to learn Web Programming. Turbo Funnel is the simplest Inbound marketing tool, helping people 
-                turbocharging their conversions.
-              </p>
-              */}
-
             <div className="mt-8 ml-8">
               <Mailto email="me@netoff.dev" className="button" />
               &nbsp;or&nbsp;
@@ -140,8 +132,8 @@ export default function Home() {
                 'javascript',
                 'react',
                 'postgresql',
-                'amazonwebservices',
                 'heroku',
+                'amazonwebservices',
               ].map((lang) => (
                 <div className="skill" key={lang}>
                   <Image

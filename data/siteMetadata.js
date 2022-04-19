@@ -1,18 +1,18 @@
 const siteMetadata = {
+  handle: 'netoff',
   title: 'netoff | Software Engineer',
   author: 'Dusan Pantelic',
   headerTitle: 'netoff.dev',
   description: 'Dusan Pantelic - Software Engineer for life',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
-  siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
+  siteUrl: 'https://netoff.dev',
+  siteRepo: 'https://github.com/netoff/netoff.dev',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter-card.png',
   email: 'me@netoff.dev',
   github: 'https://github.com/netoff',
-
   locale: 'en-US',
   analytics: {
     // If you want to use an analytics provider you have to add it to the

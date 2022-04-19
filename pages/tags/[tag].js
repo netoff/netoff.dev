@@ -8,6 +8,8 @@ import kebabCase from '@/lib/utils/kebabCase'
 import fs from 'fs'
 import path from 'path'
 
+import BlogLayout from '@/components/BlogLayout'
+
 const root = process.cwd()
 
 export async function getStaticPaths() {
@@ -44,12 +46,12 @@ export default function Tag({ posts, tag }) {
   // Capitalize first letter and convert space to dash
   const title = tag[0].toUpperCase() + tag.split(' ').join('-').slice(1)
   return (
-    <>
+    <BlogLayout>
       <TagSEO
         title={`${tag} - ${siteMetadata.author}`}
         description={`${tag} tags - ${siteMetadata.author}`}
       />
       <ListLayout posts={posts} title={title} />
-    </>
+    </BlogLayout>
   )
 }

@@ -1,4 +1,5 @@
 ---
+handle: netoff
 name: Dusan Pantelic
 avatar: /static/images/dusan.png
 occupation: Full-Stack Software Engineer
@@ -7,8 +8,23 @@ email: me@netoff.dev
 github: https://github.com/netoff
 ---
 
-Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab. His research interests includes complexity modelling of tailwinds, headwinds and crosswinds.
+Hola! My name is **Dusan**. Some people know me as [netoff](https://github.com/netoff).
 
-He leads the clean energy group which develops 3D air pollution-climate models, writes differential equation solvers, and manufactures titanium plated air ballons. In his free time he bakes raspberry pi.
+I’ve been in Software Engineering and Web Development for more than half of my life. I have **15+ years** of experience with **Ruby on Rails**, and **7+ years** of experience with
+**React/JS**.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+I am the [**Ruby School**](https://rubysoft.dev/ruby_school) and [**Turbo Funnel**](https://turbofunnelapp.com) creator, and I running them passionately is what I do day to day. **Ruby School** is the easiest way for non-programmers (e.g., non-technical founders) to learn Web Programming. **Turbo Funnel** is the easiest Inbound marketing tool, helping people turbocharge their conversions
+
+My skills include following technologies:
+
+- html
+- css
+- git
+- github
+- ruby
+- rspec
+- javascript
+- react
+- postgresql
+- heroku
+- aws
