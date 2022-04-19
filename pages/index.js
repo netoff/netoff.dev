@@ -26,7 +26,7 @@ export default function Home() {
           style={{ backgroundColor: 'rgba(255, 255, 255, .7)' }}
         >
           <div className="p-4 text-center md:p-8 lg:text-left">
-            <div className="mb-8 ml-8 flex hidden lg:flex">
+            <div className="mb-8 flex hidden lg:ml-8 lg:flex">
               <div className="mr-2">netoff.dev</div>
               <div className="main-nav-link">
                 <Link href={'/blog'}>Blog</Link>
@@ -61,7 +61,7 @@ export default function Home() {
                 <h1 className="mx-auto text-center text-3xl font-bold lg:mx-0">Dusan Pantelic </h1>
               </div>
               <div className="mx-auot border-b border-blue-500 opacity-50 lg:mx-8 "></div>
-              <h2 className="ml-8 text-xl">
+              <h2 className="text-xl lg:ml-8">
                 aka <span className="font-bold">netoff</span>
               </h2>
             </div>
@@ -95,7 +95,7 @@ export default function Home() {
               </a>
               )
             </p>
-            <ul className="list-none pt-4 pl-8 text-sm lg:list-disc">
+            <ul className="list-none pt-4 text-sm lg:list-disc lg:pl-8">
               <li className="mb-2">
                 Hola! My name is <span className="font-bold">Dusan</span>. Some people know me as
                 <a className="link ml-1" href="https://github.com/netoff">
@@ -113,7 +113,7 @@ export default function Home() {
               </li>
             </ul>
 
-            <div className="mt-8 ml-8">
+            <div className="mt-8 lg:ml-8">
               <Mailto email="me@netoff.dev" className="button" />
               &nbsp;or&nbsp;
               <a href="https://calendly.com/netoff/15min" className="button">
@@ -121,7 +121,7 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="items-left mx-auto mt-8 ml-8 flex flex-wrap justify-between lg:pb-0">
+            <div className="items-left mx-auto mt-8 flex flex-wrap justify-between lg:ml-8 lg:pb-0">
               {[
                 'html5',
                 'css3',
@@ -147,7 +147,7 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="mt-4 ml-8 text-xs text-base">
+            <div className="mt-4 text-xs text-base lg:ml-8">
               Copyright &copy; {new Date().getFullYear()} Dusan Pantelic
             </div>
           </div>

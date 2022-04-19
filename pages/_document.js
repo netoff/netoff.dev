@@ -8,7 +8,7 @@ class MyDocument extends Document {
         <Head>
           <Favicon />
         </Head>
-        <body className="bg-white text-black antialiased dark:bg-gray-900 dark:text-white">
+        <body className="bg-gray-900 text-white antialiased ">
           <Main />
           <NextScript />
         </body>
