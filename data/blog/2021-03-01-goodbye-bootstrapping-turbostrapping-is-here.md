@@ -1,5 +1,6 @@
 ---
-author: default
+authors:
+  - dusan
 title: Goodbye Bootstrapping, Turbostrapping is here
 date: '2021-03-01'
 tags: ['rails', 'hotwire', 'turbo']

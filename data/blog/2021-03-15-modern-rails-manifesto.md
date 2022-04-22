@@ -1,5 +1,6 @@
 ---
-author: default
+authors:
+  - dusan
 title: Modern Rails Manifesto
 date: '2021-03-15'
 tags: ['rails', 'tests']

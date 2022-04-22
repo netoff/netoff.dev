@@ -1,5 +1,6 @@
 ---
-author: default
+authors:
+  - dusan
 title: 'Hotwire: It is here to stay'
 date: '2022-04-20'
 tags: ['rails', 'hotwire']
@@ -8,7 +9,6 @@ summary: It’s been four months since Rails 7 was released
 thumbnail:
   id: 1S6VJgQ-xTQ
   author: Shay
-  # img: shay-1S6VJgQ-xTQ-unsplash.jpg
 ---
 
 It’s been four months since Rails 7 was released (Rails 7.0.0 was officially released on the 15th of December 2021). We saw Hotwire getting some excellent traction during this period and becoming universally accepted. It became the de-facto standard for building new Web applications in the Rails world.

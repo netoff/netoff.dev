@@ -3,7 +3,6 @@ handle: netoff
 name: Dusan Pantelic
 avatar: /static/images/dusan.png
 occupation: Full-Stack Software Engineer
-# company: Stanford University
 email: me@netoff.dev
 github: https://github.com/netoff
 ---

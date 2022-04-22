@@ -2,9 +2,10 @@ import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { getFileBySlug } from '@/lib/mdx'
 
 const DEFAULT_LAYOUT = 'AuthorLayout'
+const DEFAULT_AUTHOR = 'dusan'
 
 export async function getStaticProps() {
-  const authorDetails = await getFileBySlug('authors', ['default'])
+  const authorDetails = await getFileBySlug('authors', [DEFAULT_AUTHOR])
   return { props: { authorDetails } }
 }
 

@@ -7,9 +7,19 @@
       <language>en-us</language>
       <managingEditor>me@netoff.dev (Dusan Pantelic)</managingEditor>
       <webMaster>me@netoff.dev (Dusan Pantelic)</webMaster>
-      <lastBuildDate>Wed, 20 Apr 2022 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Mon, 25 Apr 2022 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://netoff.dev/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://netoff.dev/blog/2022-04-25-feature-flags-the-good-and-bad</guid>
+    <title>Feature flags: the good and the bad</title>
+    <link>https://netoff.dev/blog/2022-04-25-feature-flags-the-good-and-bad</link>
+    <description>TLDR: Should you ever use Feature flags? Short answer: NO, hardly ever!</description>
+    <pubDate>Mon, 25 Apr 2022 00:00:00 GMT</pubDate>
+    <author>me@netoff.dev (Dusan Pantelic)</author>
+    <category>engineering</category><category>patterns</category>
+  </item>
+
   <item>
     <guid>https://netoff.dev/blog/2022-04-20-hotwire-is-here-to-stay</guid>
     <title>Hotwire: It is here to stay</title>
