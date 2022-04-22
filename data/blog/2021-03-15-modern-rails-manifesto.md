@@ -5,9 +5,9 @@ date: '2021-03-15'
 tags: ['rails', 'tests']
 draft: false
 summary: I strongly believe there is a right way to do Rails...
-thumbnail: ivan-aleksic-FoYLV60_eHY-unsplash.jpg
-thumbnail_attribution_id: FoYLV60_eHY
-thumbnail_author: Ivan Aleksic
+thumbnail:
+  id: FoYLV60_eHY
+  author: Ivan Aleksic
 ---
 
 - Only Rails built-in functionalities and sub-frameworks should be used:

@@ -1,11 +1,13 @@
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
-import siteMetadata from '@/data/siteMetadata'
 import { useState } from 'react'
 import Pagination from '@/components/Pagination'
 import formatDate from '@/lib/utils/formatDate'
 
 import Image from 'next/image'
+
+import thumbnailToPath from '@/lib/thumbnail'
+import Thumbnail from '@/lib/thumbnail'
 
 export default function ListLayout({ posts, title, initialDisplayPosts = [], pagination }) {
   const [searchValue, setSearchValue] = useState('')
@@ -54,6 +56,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
           {!filteredBlogPosts.length && 'No posts found.'}
           {displayPosts.map((frontMatter) => {
             const { slug, date, title, summary, tags, thumbnail } = frontMatter
+
             return (
               <li key={slug} className="py-4">
                 <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
@@ -65,16 +68,11 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                   </dl>
                   <div className="space-y-3 xl:col-span-3">
                     <div>
-                      <h3 className="text-2xl font-bold leading-8 tracking-tight">
+                      <h3 className="text-2xl leading-8 tracking-tight">
                         <Link href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-100">
-                          {title}
+                          <div className="font-bold">{title}</div>
                           <div className="lg:w-2/3">
-                            <Image
-                              layout="responsive"
-                              width={640}
-                              height={480}
-                              src={`/images/blog/${thumbnail}`}
-                            />
+                            {thumbnail ? <Thumbnail {...{ thumbnail, alt: title }} /> : null}
                           </div>
                         </Link>
                       </h3>
