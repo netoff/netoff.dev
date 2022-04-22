@@ -1,0 +1,13 @@
+{
+  "html5": "HTML",
+  "css3": "CSS",
+  "git": "git",
+  "github": "GitHub",
+  "ruby": "Ruby",
+  "rspec": "RSpec",
+  "javascript": "JavaScript",
+  "react": "React",
+  "postgresql": "PostgreSQL",
+  "heroku": "Heroku",
+  "amazonwebservices": "AWS"
+}

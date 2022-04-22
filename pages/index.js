@@ -11,6 +11,8 @@ import me from '/public/images/dusan.png'
 
 import MobileNav from '@/components/MobileNav'
 
+import skills from '@/data/skills.json'
+
 export async function getStaticProps(context) {
   return {
     props: {},
@@ -132,23 +134,11 @@ export default function Home() {
             </div>
 
             <div className="items-left mx-auto mt-8 flex flex-wrap justify-between lg:ml-8 lg:pb-0">
-              {[
-                'html5',
-                'css3',
-                'git',
-                'github',
-                'ruby',
-                'rspec',
-                'javascript',
-                'react',
-                'postgresql',
-                'heroku',
-                'amazonwebservices',
-              ].map((lang) => (
-                <div className="skill" key={lang}>
+              {Object.entries(skills).map(([lang, title], i) => (
+                <div className="skill" key={i}>
                   <Image
-                    title={lang}
-                    alt={lang}
+                    title={title}
+                    alt={title}
                     width="32"
                     height="32"
                     src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${lang}/${lang}-original.svg`}
