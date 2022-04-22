@@ -11,6 +11,12 @@ import me from '/public/images/dusan.png'
 
 import MobileNav from '@/components/MobileNav'
 
+export async function getStaticProps(context) {
+  return {
+    props: {},
+  }
+}
+
 export default function Home() {
   return (
     <div className="relative h-full bg-gray-900 leading-normal tracking-wider text-gray-900 antialiased">
