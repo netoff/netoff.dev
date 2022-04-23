@@ -1,7 +1,6 @@
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
 
-import Analytics from './analytics'
 import LayoutWrapper from './LayoutWrapper'
 import siteMetadata from '@/data/siteMetadata'
 import { ClientReload } from './ClientReload'
@@ -16,7 +15,7 @@ export default function BlogLayout({ children }) {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       {isDevelopment && isSocket && <ClientReload />}
-      <Analytics />
+
       <LayoutWrapper>{children}</LayoutWrapper>
     </ThemeProvider>
   )
