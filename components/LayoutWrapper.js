@@ -5,6 +5,9 @@ import SectionContainer from './SectionContainer'
 import Footer from './Footer'
 import MobileNav from './MobileNav'
 
+import { faHouse } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 const LayoutWrapper = ({ children }) => {
   return (
     <SectionContainer>
@@ -16,8 +19,11 @@ const LayoutWrapper = ({ children }) => {
                 <Link
                   key={link.title}
                   href={link.href}
-                  className="p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4"
+                  className="inline-flex p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4"
                 >
+                  {link.href == '/' ? (
+                    <FontAwesomeIcon icon={faHouse} className="mr-2 inline h-4 w-4" />
+                  ) : null}
                   {link.title}
                 </Link>
               ))}
