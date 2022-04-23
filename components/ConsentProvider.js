@@ -184,14 +184,12 @@ export default function ConsentProvider({ children }) {
     setCookiesLoaded(true)
   }, [])
 
-  const isAllAccepted = () => consent.accepted && consent.analytics && consent.preference
+  const isAllAccepted = () => consent.analytics && consent.preference
 
   return (
     <ConsentContext.Provider value={consent}>
       {children}
-      {cookiesLoaded && !isAllAccepted() ? (
-        <Consent consent={consent} onAccept={acceptConsent} />
-      ) : null}
+      {!isAllAccepted() ? <Consent consent={consent} onAccept={acceptConsent} /> : null}
     </ConsentContext.Provider>
   )
 }

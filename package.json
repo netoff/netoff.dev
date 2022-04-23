@@ -12,6 +12,7 @@
     "lint": "next lint --fix --dir pages --dir components --dir lib --dir layouts --dir scripts",
     "prepare": "husky install",
     "cypress": "cypress run",
+    "test_e2e_live": "cypress open",
     "test_e2e": "start-server-and-test start-test http://localhost:3003 cypress"
   },
   "dependencies": {
