@@ -4,12 +4,13 @@ const GAScript = ({ id }) => {
   return (
     <>
       <Script
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${id}`}
       />
 
-      <Script id="ga-script">
+      <Script id="ga-script" strategy="afterInteractive">
         {`
+            console.log('init GA', '${id}')
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());

@@ -1,4 +1,4 @@
-import Link from './Link'
+import Link from 'next/link'
 import siteMetadata from '@/data/siteMetadata'
 import SocialIcon from '@/components/social-icons'
 
@@ -23,8 +23,8 @@ export default function Footer() {
           <div>{` • `}</div>
           <div>{`Copyright © ${new Date().getFullYear()}`}</div>
           <div>{` • `}</div>
-          <Link href="/cookies_policy" className="underline">
-            Cookies Policy
+          <Link href="/cookies_policy">
+            <a className="underline">Cookies Policy</a>
           </Link>
         </div>
       </div>

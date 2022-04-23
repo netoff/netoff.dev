@@ -28,7 +28,7 @@ function Consent({ consent, onAccept }) {
   return (
     <div
       className={`fixed bottom-0 z-10 w-screen select-none px-16  text-white ${
-        consent.accepted ? 'py-2 text-xs' : 'py-8 lg:h-1/3 '
+        consent.accepted ? 'py-2 text-xs' : 'py-8'
       }`}
       style={{
         backgroundColor: consent.accepted ? 'rgba(256,128,128, 0.7)' : 'rgba(65,105,225, 0.9)',
@@ -40,12 +40,12 @@ function Consent({ consent, onAccept }) {
             <div className="md:pl-4 lg:pl-8">
               <h2 className="text-2xl font-bold">Cookies</h2>
               <p className="pt-2 text-sm">
-                This Website is using Cookies. Read&nbsp;
+                This Website uses Cookies. Read&nbsp;
                 <Link href="/cookies_policy">
                   <a className="font-bold underline">Cookies Policy</a>
                 </Link>
-                &nbsp;in order to better understand how Cookies work and how they are used. Please
-                Accept it before continuing to the Website.
+                &nbsp;to understand better how Cookies work and how this Website uses Cookies.
+                Please Accept it before continuing to the Website.
               </p>
             </div>
 
