@@ -12,6 +12,7 @@
     "lint": "next lint --fix --dir pages --dir components --dir lib --dir layouts --dir scripts",
     "prepare": "husky install",
     "cypress": "cypress run",
+    "test": "jest --watch",
     "test_e2e_live": "cypress open",
     "test_e2e": "start-server-and-test start-test http://localhost:3003 cypress"
   },
@@ -58,6 +59,8 @@
   "devDependencies": {
     "@next/bundle-analyzer": "12.1.4",
     "@svgr/webpack": "^6.1.2",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.1.1",
     "cross-env": "^7.0.3",
     "dedent": "^0.7.0",
     "eslint": "^7.29.0",
@@ -69,6 +72,7 @@
     "globby": "11.0.3",
     "husky": "^6.0.0",
     "inquirer": "^8.1.1",
+    "jest": "^27.5.1",
     "lint-staged": "^11.0.0",
     "next-remote-watch": "^1.0.0",
     "prettier": "^2.5.1",
