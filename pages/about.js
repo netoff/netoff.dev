@@ -8,7 +8,7 @@ export async function getStaticProps() {
   return { props: { authorDetails } }
 }
 
-import BlogLayout from '@/components/BlogLayout'
+import BlogLayout from '@/layouts/BlogLayout'
 
 export default function About({ authorDetails }) {
   const { mdxSource, frontMatter } = authorDetails

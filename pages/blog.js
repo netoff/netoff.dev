@@ -16,7 +16,7 @@ export async function getStaticProps() {
   return { props: { initialDisplayPosts, posts, pagination } }
 }
 
-import BlogLayout from '@/components/BlogLayout'
+import BlogLayout from '@/layouts/BlogLayout'
 
 export default function Blog({ posts, initialDisplayPosts, pagination }) {
   return (

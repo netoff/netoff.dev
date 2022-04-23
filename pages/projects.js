@@ -3,7 +3,7 @@ import projectsData from '@/data/projectsData'
 import Card from '@/components/Card'
 import { PageSEO } from '@/components/SEO'
 
-import BlogLayout from '@/components/BlogLayout'
+import BlogLayout from '@/layouts/BlogLayout'
 
 export default function Projects() {
   return (

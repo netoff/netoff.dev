@@ -8,7 +8,7 @@ import kebabCase from '@/lib/utils/kebabCase'
 import fs from 'fs'
 import path from 'path'
 
-import BlogLayout from '@/components/BlogLayout'
+import BlogLayout from '@/layouts/BlogLayout'
 
 const root = process.cwd()
 
