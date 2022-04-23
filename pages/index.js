@@ -152,7 +152,10 @@ export default function Home() {
             </div>
 
             <div className="mt-4 text-xs text-base lg:ml-8">
-              Copyright &copy; {new Date().getFullYear()} Dusan Pantelic
+              Copyright &copy; {new Date().getFullYear()} Dusan Pantelic |{' '}
+              <Link href="/privacy">
+                <a className="underline">Privacy policy</a>
+              </Link>
             </div>
           </div>
         </div>
