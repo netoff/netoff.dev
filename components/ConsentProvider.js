@@ -3,8 +3,7 @@ import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { faCheckDouble } from '@fortawesome/free-solid-svg-icons'
-import { useState, createContext, useContext } from 'react'
-import { useEffect } from 'react'
+import { useState, createContext, useContext, useEffect } from 'react'
 
 import { parseCookies, setCookie, destroyCookie } from 'nookies'
 
@@ -21,7 +20,7 @@ export function useConsent() {
   return useContext(ConsentContext)
 }
 
-export function Consent({ consent, onAccept }) {
+function Consent({ consent, onAccept }) {
   const [preference, setPreference] = useState(consent.preference)
   const [analytics, setAnalytics] = useState(consent.analytics)
   const [showPreferences, setShowPreferences] = useState(false)
@@ -147,14 +146,14 @@ export function Consent({ consent, onAccept }) {
   )
 }
 
-const COOKIE_PROPERTIES = {
-  maxAge: 365 * 30 * 24 * 60 * 60,
-  path: '/',
-}
-
 export default function ConsentProvider({ children }) {
   const [cookiesLoaded, setCookiesLoaded] = useState(false)
   const [consent, setConsent] = useState(defaultConsent)
+
+  const COOKIE_PROPERTIES = {
+    maxAge: 365 * 30 * 24 * 60 * 60,
+    path: '/',
+  }
 
   const acceptConsent = ({ preference, analytics }, all = false) => {
     setCookie(null, 'consent_accepted', '1', COOKIE_PROPERTIES)
@@ -174,6 +173,7 @@ export default function ConsentProvider({ children }) {
   useEffect(() => {
     // load consent from cookies
     const cookies = parseCookies()
+
     setConsent((prev) => ({
       ...prev,
       preference: parseInt(cookies.preference_consent) == 1,
