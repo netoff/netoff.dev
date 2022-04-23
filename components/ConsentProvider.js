@@ -147,16 +147,20 @@ export function Consent({ consent, onAccept }) {
   )
 }
 
+const COOKIE_PROPERTIES = {
+  maxAge: 365 * 30 * 24 * 60 * 60,
+  path: '/',
+}
+
 export default function ConsentProvider({ children }) {
   const [cookiesLoaded, setCookiesLoaded] = useState(false)
   const [consent, setConsent] = useState(defaultConsent)
 
   const acceptConsent = ({ preference, analytics }, all = false) => {
-    console.log('in accept!', preference || all, analytics || all)
-    setCookie(null, 'consent_accepted', '1')
-    if (preference || all) setCookie(null, 'preference_consent', '1')
+    setCookie(null, 'consent_accepted', '1', COOKIE_PROPERTIES)
+    if (preference || all) setCookie(null, 'preference_consent', '1', COOKIE_PROPERTIES)
     else destroyCookie(null, 'preference_consent')
-    if (analytics || all) setCookie(null, 'analytics_consent', '1')
+    if (analytics || all) setCookie(null, 'analytics_consent', '1', COOKIE_PROPERTIES)
     else destroyCookie(null, 'analytics_consent')
 
     setConsent((prev) => ({
@@ -170,7 +174,6 @@ export default function ConsentProvider({ children }) {
   useEffect(() => {
     // load consent from cookies
     const cookies = parseCookies()
-    console.log('cookies', cookies)
     setConsent((prev) => ({
       ...prev,
       preference: parseInt(cookies.preference_consent) == 1,
@@ -179,12 +182,10 @@ export default function ConsentProvider({ children }) {
     }))
 
     setCookiesLoaded(true)
-    // debugger;
   }, [])
 
   const isAllAccepted = () => consent.accepted && consent.analytics && consent.preference
 
-  console.log('before render:', consent)
   return (
     <ConsentContext.Provider value={consent}>
       {children}
