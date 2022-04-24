@@ -134,7 +134,9 @@ describe('cookies consent', () => {
       cy.setCookie('analytics_consent', '1')
       cy.setCookie('preference_consent', '1')
 
+      // visit root path first to 'warm up' render
       cy.visit('/')
+      cy.visit('/blog')
 
       cy.contains('h2', 'Cookies').should('not.exist')
     })
