@@ -3,18 +3,17 @@
   "version": "1.5.4",
   "private": true,
   "scripts": {
-    "start": "cross-env SOCKET=true node ./scripts/next-remote-watch.js ./data",
-    "start-test": "next build && next start -p 3003",
     "dev": "next dev",
     "build": "next build && node ./scripts/generate-sitemap",
-    "serve": "next start",
-    "analyze": "cross-env ANALYZE=true next build",
+    "start": "next start",
+    "start_test": "next build && next start -p 3003",
+    "analyze": "ANALYZE=true next build",
     "lint": "next lint --fix --dir pages --dir components --dir lib --dir layouts --dir scripts",
     "prepare": "husky install",
     "cypress": "cypress run",
     "test": "jest --watch",
     "test_e2e_live": "cypress open",
-    "test_e2e": "start-server-and-test start-test http://localhost:3003 cypress"
+    "test_e2e": "start-server-and-test start_test http://localhost:3003 cypress"
   },
   "dependencies": {
     "@fontsource/inter": "4.5.2",
@@ -61,7 +60,6 @@
     "@svgr/webpack": "^6.1.2",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
-    "cross-env": "^7.0.3",
     "dedent": "^0.7.0",
     "eslint": "^7.29.0",
     "eslint-config-next": "12.1.4",
