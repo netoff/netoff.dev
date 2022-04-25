@@ -14,11 +14,8 @@ import MobileNav from '@/components/MobileNav'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { faHouse, faBriefcase, faGlobe } from '@fortawesome/free-solid-svg-icons'
-import { useConsent } from '@/components/ConsentProvider'
 
 export default function Home() {
-  const consent = useConsent()
-
   return (
     <div className="relative h-full bg-gray-900 leading-normal tracking-wider text-gray-900 antialiased">
       <Head>

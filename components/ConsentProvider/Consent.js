@@ -1,29 +1,26 @@
+import deline from 'deline'
+
 import Link from 'next/link'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { faCheckDouble } from '@fortawesome/free-solid-svg-icons'
-import { useState, createContext, useContext, useEffect } from 'react'
+import { useState } from 'react'
 
-import { parseCookies, setCookie, destroyCookie } from 'nookies'
+export const DISABLED_COOKIES_NOTICE = deline(`
+  You disabled some of the Cookies so your browsing experience might be affected. Below
+  you can manage your Cookie preferences in order to enable full Website capabilities.
+`)
 
-const defaultConsent = {
-  required: true,
-  accepted: false,
-  preference: false,
-  analytics: false,
-}
+export const DEFAULT_MESSAGE = deline(`
+  This Website uses Cookies. Please Accept it before continuing to the Website. 
+  Read Cookies Policy to understand better how Cookies work and how this Website uses Cookies.
+`)
 
-export const ConsentContext = createContext(defaultConsent)
-
-export function useConsent() {
-  return useContext(ConsentContext)
-}
-
-function Consent({ consent, onAccept }) {
+export default function Consent({ consent, onAccept }) {
   const [preference, setPreference] = useState(consent.preference)
   const [analytics, setAnalytics] = useState(consent.analytics)
-  const [showPreferences, setShowPreferences] = useState(false)
+  const [showPreferences, setShowPreferences] = useState(consent.accepted)
 
   return (
     <div
@@ -39,14 +36,10 @@ function Consent({ consent, onAccept }) {
           <div className="flex-row-reverse md:flex lg:flex">
             <div className="md:pl-4 lg:pl-8">
               <h2 className="text-2xl font-bold">Cookies</h2>
-              <p className="pt-2 text-sm">
-                This Website uses Cookies. Read&nbsp;
-                <Link href="/cookies_policy">
-                  <a className="font-bold underline">Cookies Policy</a>
-                </Link>
-                &nbsp;to understand better how Cookies work and how this Website uses Cookies.
-                Please Accept it before continuing to the Website.
-              </p>
+              <p className="pt-2 text-sm">{DEFAULT_MESSAGE}</p>
+              <Link href="/cookies_policy">
+                <a className="font-bold underline">Cookies Policy</a>
+              </Link>
             </div>
 
             <div className="shrink-0">
@@ -81,13 +74,10 @@ function Consent({ consent, onAccept }) {
             </div>
           </div>
         ) : (
-          <div>
-            You disabled some of the Cookies so your browsing experience might be affected. Below
-            you can manage your Cookie preferences in order to enable full Website capabilities.
-          </div>
+          <div>{DISABLED_COOKIES_NOTICE}</div>
         )}
 
-        {showPreferences || consent.accepted ? (
+        {showPreferences ? (
           <div className="">
             <div>Cookies Preferences</div>
             <div className="items-center text-sm md:flex lg:flex">
@@ -99,7 +89,7 @@ function Consent({ consent, onAccept }) {
                   disabled
                   id="required_cookies"
                 />
-                <label htmlFor="required_cookies" className="cursor-pointer">
+                <label htmlFor="required_cookies" className="ml-1 cursor-pointer">
                   Required Cookies
                 </label>
               </div>
@@ -111,7 +101,7 @@ function Consent({ consent, onAccept }) {
                   checked={preference}
                   onChange={(e) => setPreference(e.target.checked)}
                 />
-                <label htmlFor="preference_cookies" className="cursor-pointer">
+                <label htmlFor="preference_cookies" className="ml-1 cursor-pointer">
                   Preference Cookies
                 </label>
               </div>
@@ -123,75 +113,25 @@ function Consent({ consent, onAccept }) {
                   checked={analytics}
                   onChange={(e) => setAnalytics(e.target.checked)}
                 />
-                <label htmlFor="analytics_cookies" className="cursor-pointer">
+                <label htmlFor="analytics_cookies" className="ml-1 cursor-pointer">
                   Web Analytics Cookies
                 </label>
               </div>
-              <button
-                className="bg-gray-200 py-1 px-2 text-black"
-                onClick={() =>
+              <input
+                type="submit"
+                className="cursor-pointer bg-gray-200 py-1 px-2 text-black"
+                onClick={() => {
                   onAccept({
                     preference,
                     analytics,
                   })
-                }
-              >
-                Save
-              </button>
+                }}
+                value="Save"
+              />
             </div>
           </div>
         ) : null}
       </div>
     </div>
-  )
-}
-
-export default function ConsentProvider({ children }) {
-  const [cookiesLoaded, setCookiesLoaded] = useState(false)
-  const [consent, setConsent] = useState(defaultConsent)
-
-  const COOKIE_PROPERTIES = {
-    maxAge: 365 * 30 * 24 * 60 * 60,
-    path: '/',
-  }
-
-  const acceptConsent = ({ preference, analytics }, all = false) => {
-    setCookie(null, 'consent_accepted', '1', COOKIE_PROPERTIES)
-    if (preference || all) setCookie(null, 'preference_consent', '1', COOKIE_PROPERTIES)
-    else destroyCookie(null, 'preference_consent')
-    if (analytics || all) setCookie(null, 'analytics_consent', '1', COOKIE_PROPERTIES)
-    else destroyCookie(null, 'analytics_consent')
-
-    setConsent((prev) => ({
-      ...prev,
-      preference: preference || all,
-      analytics: analytics || all,
-      accepted: true,
-    }))
-  }
-
-  useEffect(() => {
-    // load consent from cookies
-    const cookies = parseCookies()
-
-    setConsent((prev) => ({
-      ...prev,
-      preference: parseInt(cookies.preference_consent) == 1,
-      analytics: parseInt(cookies.analytics_consent) == 1,
-      accepted: parseInt(cookies.consent_accepted) == 1,
-    }))
-
-    setCookiesLoaded(true)
-  }, [])
-
-  const allAccepted = consent.analytics && consent.preference
-
-  return (
-    <ConsentContext.Provider value={consent}>
-      {children}
-      {cookiesLoaded && !allAccepted ? (
-        <Consent consent={consent} onAccept={acceptConsent} />
-      ) : null}
-    </ConsentContext.Provider>
   )
 }
