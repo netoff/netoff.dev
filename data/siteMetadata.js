@@ -8,9 +8,9 @@ const siteMetadata = {
   theme: 'system', // system, dark or light
   siteUrl: 'https://netoff.dev',
   siteRepo: 'https://github.com/netoff/netoff.dev',
-  siteLogo: '/static/images/logo.png',
+  siteLogo: '/images/dusan.png',
   image: '/static/images/avatar.png',
-  socialBanner: '/static/images/twitter-card.png',
+  socialBanner: '/static/images/twitter-card.jpg',
   email: 'me@netoff.dev',
   github: 'https://github.com/netoff',
   locale: 'en-US',
