@@ -2,6 +2,8 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import siteMetadata from '@/data/siteMetadata'
 
+import { thumbnailToPath } from '@/lib/thumbnail'
+
 const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl }) => {
   const router = useRouter()
   return (
@@ -82,13 +84,14 @@ export const BlogSEO = ({
   url,
   images = [],
   canonicalUrl,
+  thumbnail,
 }) => {
   const router = useRouter()
   const publishedAt = new Date(date).toISOString()
   const modifiedAt = new Date(lastmod || date).toISOString()
   let imagesArr =
     images.length === 0
-      ? [siteMetadata.socialBanner]
+      ? [thumbnailToPath(thumbnail)]
       : typeof images === 'string'
       ? [images]
       : images
