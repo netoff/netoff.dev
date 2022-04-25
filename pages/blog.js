@@ -21,7 +21,7 @@ import BlogLayout from '@/layouts/BlogLayout'
 export default function Blog({ posts, initialDisplayPosts, pagination }) {
   return (
     <BlogLayout>
-      <PageSEO title={`${siteMetadata.handle} | Blog`} description={siteMetadata.description} />
+      <PageSEO title="Blog" description={siteMetadata.description} />
       <ListLayout
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}

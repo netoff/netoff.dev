@@ -1,0 +1,86 @@
+---
+authors:
+  - dusan
+title: 'Feature flags: the good and the bad'
+date: '2022-04-25'
+draft: false
+summary: 'TLDR: Should you ever use Feature flags? Short answer: NO, hardly ever!'
+tags: ['engineering', 'patterns']
+thumbnail:
+  id: Ku-1SYS0o7k
+  author: Mila Tovar
+---
+
+<TOCInline toc={props.toc} indentDepth={2} asDisclosure />
+
+Should you ever use Feature flags? Short answer: **NO, hardly ever**!
+
+# What is a Feature flag?
+
+First, let me explain what a Feature flag is. It is a new brand of snake oil. If I am going to be more polite to certain people, I would say it is new alchemy. Modern wizards will tell you you should apply the Feature flag at every imaginable place in your codebase.
+
+On a more serious note, a Feature flag is a software development term for a mechanism that enables a developer to turn a Feature on or off without releasing a new version of the software. It can also present two or more different variations of the same Feature. This can be done by setting a variable in the software at the user level. That way, every user can access a different set of Features. When a Feature is turned off, it is generally hidden from the user, or an alternate Feature is presented.
+
+# How offten can you use a Feature flag?
+
+If I have to quantify that answer, I would probably say: '**zero, at most**'. Perhaps, there might be a legitimate use case for Feature flags. A straightforward variation of Feature flags is an **A/B test** used on marketing websites.
+
+## A/B test
+
+A/B tests should be allowed for content variations only. The goal should be to test which copy/visuals perform better across the given audience. A/B tests on these sites should never span and affect any flow or logic. Just visual presentation and arrangement of content across the pages can be affected.
+
+That’s the only valid usage scenario for Feature flags. Do not confuse simple content variations with a more broad category of A/B tests that might span application functionality, not just content.
+
+# Top reasons Feature flags should be forbidden
+
+It comes down to the following:
+
+- [**Extreme Complexity**](#extreme-complexity)
+- [**Bad Software Design**](#bad-software-design)
+- [**Bad Product Design**](#bad-product-design)
+- [**Bad Usability**](#bad-usability)
+
+## Extreme Complexity
+
+The [**Combinatorial explosion**](https://en.wikipedia.org/wiki/Combinatorial_explosion): What is it?. Your software can be in a well-defined, discrete state at any time. This state is defined by combining all the variables and their current values. These values can be changed, which creates another state. It means states can transition from one to the other.
+That’s why programs are called finite [**state machines**](https://en.wikipedia.org/wiki/Finite-state_machine) in more scientific parlance. All the different states and transitions have a definite count(hence finite). It is essential to keep that count under control.
+
+Good software is working software(one without bugs). To achieve this, you need test coverage. You have to cover as many different states as possible and their transitions from one to the other. It would help if you had a finite, manageable count of all the possible states. Ideally, you have to cover(or test) every state and verify it is working as expected.
+
+Every Feature flag will introduce at least 2 different states. Three various Features flags will not give you 3 other states. Three different Feature flags will not give you 6 different states. You will have no less than **eight of them**. It is an exponential function. If for the sake of simplicity, we assume every Feature flag has only 2 different variations of that Feature, then N additional Features will produce:
+
+$$
+\mathbf{x} = 2^\mathbf{N} states
+$$
+
+Plug arbitrary (N)umber of Features into that exponential function, and you will get a clear picture of what Combinatorial Explosion means. Can you write that many test cases? And that is to cover different Features only.
+
+## Bad Software Design
+
+Every Feature flag introduces a new `if` conditional with at least two different branches. Excessive branching and conditionals are bad Software practices and bad design. Not only the Feature flag will affect your presentation layer. You need to add conditional logic across all the components to support this new behavior.
+
+This means you are not introducing one `if` statement. You are adding `if`s all over the place. Or, to put this simpler, you need to modify your controllers, models, API calls, background Jobs, etc. With this same `if` condition.
+
+It will increase the number of tests needed to cover all this branching and contribute nicely to that beautiful spaghetti.
+
+## Bad Product Design
+
+Thank God your phone or your car has no Feature flags. These products are used the same way by everyone. One can argue that hardware can not have Feature flags because it would be almost impossible to implement them in real life. A counterargument is why then your software should have one? Even further, if you can do something, does it mean you should do it? No, you should not.
+
+The logical question is, how can you build without Feature flags? If you need to test new functionality, create a new **beta** version of your product and try it with a focus group or your team. This **beta** version should be a full-standing product on its own, without any variations or conditional logic.
+
+Each variation of the product Feature should be a self-contained, standalone version of your product. If you decide this is a bad Feature, you can release a new version or roll it back. They should never exist in parallel.
+
+That is your and your team’s responsibility to envision how your users should use your product. Your sole responsibility is to provide a solution to a user problem, not to introduce even more variables into this equation.
+
+## Bad Usability
+
+Bad product design usually leads to bad usability. Your users might be confused, but your **support and QA** might be confused even more. What confuses users are over sudden and unexpected changes in software not associated with the new version of a product. Even announced and well-advertised changes can annoy users, not to talk about unannounced ones.
+
+It can lead to a never-ending supply of support tickets for your team. User frustration and outrage are never good for the business. You are doing a disservice to your users and yourself as well.
+
+# Recap
+
+Next time somebody mentions or recommends you use Feature flags, or any of their equivalents,
+run for your life. It will be drama, a bad relationship,
+and dance with a devil on a thin wire, all at once, every single day.

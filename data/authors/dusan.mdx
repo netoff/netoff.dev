@@ -1,0 +1,40 @@
+---
+handle: netoff
+name: Dusan Pantelic
+avatar: /static/images/dusan.png
+occupation: Full-Stack Software Engineer
+email: me@netoff.dev
+github: https://github.com/netoff
+---
+
+import skills from '@/data/skills.json'
+
+Hola! My name is **Dusan**. Some people know me as [netoff](https://github.com/netoff).
+
+I’ve been in **Software Engineering** and **Web Development** for more than half of my life.
+I have **15+ years** of experience with **Ruby on Rails**, and **7+ years** of experience with
+**React/JS**.
+
+I am the [**Ruby School**](https://rubysoft.dev/ruby_school) and [**Turbo Funnel**](https://turbofunnelapp.com) creator,
+and I running them passionately is what I do day to day. **Ruby School** is the easiest way for non-programmers
+(e.g., non-technical founders) to learn Web Programming. **Turbo Funnel** is the easiest Inbound marketing tool,
+helping people turbocharge their conversions
+
+My skills include some of the following technologies:
+
+<ul className="m-0 list-none p-0">
+  {Object.entries(skills).map(([lang, title], i) => {
+    return (
+      <li key={i} className="flex bg-gray-800 p-2">
+        <Image
+          title={title}
+          alt={title}
+          width="32"
+          height="32"
+          src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${lang}/${lang}-original.svg`}
+        />
+        <span className="pl-2 font-bold underline ">{title}</span>
+      </li>
+    )
+  })}
+</ul>

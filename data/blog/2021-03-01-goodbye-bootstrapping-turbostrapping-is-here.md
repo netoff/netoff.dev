@@ -1,13 +1,14 @@
 ---
-author: default
+authors:
+  - dusan
 title: Goodbye Bootstrapping, Turbostrapping is here
 date: '2021-03-01'
 tags: ['rails', 'hotwire', 'turbo']
 draft: false
 summary: How I can help you build your SaaS business within only 3 weeks and make your dreams become a reality.
-thumbnail: mats-speicher-ZKCgKiTBqEk-unsplash.jpg
-thumbnail_attribution_id: ZKCgKiTBqEk
-thumbnail_author: Mats Speicher
+thumbnail:
+  id: ZKCgKiTBqEk
+  author: Mats Speicher
 ---
 
 Delivering something quickly, and being able to test the hypotheses is always the most important factor in determining the future and fortune of your online business.
