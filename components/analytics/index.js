@@ -8,7 +8,7 @@ const Analytics = () => {
   const consent = useConsent()
   const gaId = siteMetadata.analytics.googleAnalyticsId
 
-  return isProduction && consent.analytics && gaId && <GAScript id={gaId} />
+  return isProduction && consent.analytics && gaId ? <GAScript id={gaId} /> : null
 }
 
 export default Analytics

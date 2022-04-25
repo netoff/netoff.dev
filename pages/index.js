@@ -16,7 +16,6 @@ import skills from '@/data/skills.json'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { faHouse, faBriefcase, faGlobe } from '@fortawesome/free-solid-svg-icons'
-import { useConsent } from '@/components/ConsentProvider'
 
 export async function getStaticProps(context) {
   return {
@@ -25,8 +24,6 @@ export async function getStaticProps(context) {
 }
 
 export default function Home() {
-  const consent = useConsent()
-
   return (
     <div className="relative h-full bg-gray-900 leading-normal tracking-wider text-gray-900 antialiased">
       <Head>

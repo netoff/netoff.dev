@@ -6,6 +6,7 @@ module.exports = {
     node: true,
     es6: true,
     'cypress/globals': true,
+    'jest/globals': true,
   },
   extends: [
     'eslint:recommended',
@@ -19,6 +20,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 0,
     'no-unused-vars': 0,
+    'no-import-assign': 0,
     'react/no-unescaped-entities': 0,
     'cypress/no-assigning-return-values': 'error',
     'cypress/no-unnecessary-waiting': 'error',
@@ -26,6 +28,11 @@ module.exports = {
     'cypress/no-force': 'warn',
     'cypress/no-async-tests': 'error',
     'cypress/no-pause': 'error',
+    'jest/no-disabled-tests': 'warn',
+    'jest/no-focused-tests': 'error',
+    'jest/no-identical-title': 'error',
+    'jest/prefer-to-have-length': 'warn',
+    'jest/valid-expect': 'error',
   },
-  plugins: ['cypress'],
+  plugins: ['cypress', 'jest'],
 }

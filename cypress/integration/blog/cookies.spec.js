@@ -15,12 +15,11 @@ describe('cookies consent', () => {
 
   it('should set appropriate cookies if all Accepted', () => {
     cy.contains('Accept All').click()
-    cy.getCookie('consent_accepted').should('exist')
     cy.getCookie('preference_consent').should('exist')
     cy.getCookie('analytics_consent').should('exist')
   })
 
-  context('when cookies are set individually', () => {
+  describe('when cookies are set individually', () => {
     beforeEach(() => {
       cy.contains('h2', 'Cookies').closest('.fixed').contains('Manage').click()
     })
@@ -86,7 +85,10 @@ describe('cookies consent', () => {
           cy.contains('Cookies').should('exist')
         })
 
-      cy.contains('h2', 'Cookies').closest('.fixed').contains('button', 'Save').click()
+      cy.contains('h2', 'Cookies')
+        .closest('.fixed')
+        .contains("input[type='submit']", 'Save')
+        .click()
       cy.contains('h2', 'Cookies').should('not.exist')
     })
 
@@ -98,7 +100,10 @@ describe('cookies consent', () => {
         .find("input[type='checkbox']")
         .check()
       cy.getCookie('preference_consent').should('not.exist')
-      cy.contains('h2', 'Cookies').closest('.fixed').contains('button', 'Save').click()
+      cy.contains('h2', 'Cookies')
+        .closest('.fixed')
+        .contains("input[type='submit']", 'Save')
+        .click()
       cy.getCookie('preference_consent').should('exist')
     })
 
@@ -110,12 +115,15 @@ describe('cookies consent', () => {
         .find("input[type='checkbox']")
         .check()
       cy.getCookie('analytics_consent').should('not.exist')
-      cy.contains('h2', 'Cookies').closest('.fixed').contains('button', 'Save').click()
+      cy.contains('h2', 'Cookies')
+        .closest('.fixed')
+        .contains("input[type='submit']", 'Save')
+        .click()
       cy.getCookie('analytics_consent').should('exist')
     })
   })
 
-  context('when cookies are set already', () => {
+  describe('when cookies are set already', () => {
     it('displays consent panel if only preference cookie is set', () => {
       cy.setCookie('preference_consent', '1')
       cy.visit('/')
