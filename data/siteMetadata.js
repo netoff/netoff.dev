@@ -5,7 +5,7 @@ const siteMetadata = {
   headerTitle: 'netoff.dev',
   description: 'Dusan Pantelic - Software Engineer for life',
   language: 'en-us',
-  theme: 'system', // system, dark or light
+  theme: 'dark', // system, dark or light
   siteUrl: 'https://netoff.dev',
   siteRepo: 'https://github.com/netoff/netoff.dev',
   siteLogo: '/images/dusan.png',
