@@ -43,7 +43,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               </dl>
               <div>
                 <PageTitle>{title}</PageTitle>
-                {thumbnail ? <Thumbnail {...{ thumbnail, alt: title }} /> : null}
+                {thumbnail ? <Thumbnail {...{ thumbnail, alt: title, priority: true }} /> : null}
               </div>
             </div>
           </header>
