@@ -6,7 +6,6 @@ import Mailto from 'react-protected-mailto'
 
 import Favicon from '../components/Favicon'
 import developerImage from '/public/images/nubelson-fernandes-UcYBL5V0xWQ-unsplash.jpg'
-// import background from '/public/images/bruno-bergher--8ttvM3Ca94-unsplash.jpg'
 import me from '/public/images/dusan.png'
 
 import MobileNav from '@/components/MobileNav'
@@ -30,8 +29,6 @@ export default function Home() {
         <Favicon />
         <title>netoff | Software Engineer</title>
       </Head>
-
-      {/* <Image src={background} layout="fill" alt="Road to freedom" /> */}
 
       <div className="mx-auto mt-12 flex h-auto max-w-4xl flex-wrap items-center lg:my-0 lg:h-screen">
         <div

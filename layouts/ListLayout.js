@@ -52,10 +52,13 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
             </svg>
           </div>
         </div>
+
         <ul>
           {!filteredBlogPosts.length && 'No posts found.'}
-          {displayPosts.map((frontMatter) => {
+          {displayPosts.map((frontMatter, i) => {
             const { slug, date, title, summary, tags, thumbnail } = frontMatter
+
+            const href = `/blog/${slug}`
 
             return (
               <li key={slug} className="py-4">
@@ -69,12 +72,17 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                   <div className="space-y-3 xl:col-span-3">
                     <div>
                       <h3 className="text-2xl leading-8 tracking-tight">
-                        <Link href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-100">
+                        <Link href={href} className="text-gray-900 dark:text-gray-100">
                           <div className="font-bold">{title}</div>
-                          <div className="lg:w-2/3">
-                            {thumbnail ? <Thumbnail {...{ thumbnail, alt: title }} /> : null}
-                          </div>
                         </Link>
+
+                        <div className="lg:w-2/3">
+                          {thumbnail ? (
+                            <Thumbnail
+                              {...{ thumbnail, alt: title, link: href, priority: i === 0 }}
+                            />
+                          ) : null}
+                        </div>
                       </h3>
 
                       <div className="flex flex-wrap">
