@@ -1,0 +1,72 @@
+---
+authors: [dusan]
+title: 'minitest vs. RSpec: Which one is better?'
+summary: |
+  There is a clear winner if you ask me, and the answer might surprise you. Disclaimer: it is not a popular opinion.
+  Without much thought, everybody is just straight adding RSpec to their codebase by default. I believe that is not the right thing to do, and here are my reasons why.
+date: '2022-05-09'
+tags: ['testing', 'tdd', 'minitest', 'rspec']
+thumbnail:
+  id: Iq9SaJezkOE
+  author: Gr Stocks
+---
+
+<TOCInline toc={props.toc} indentDepth={2} asDisclosure />
+
+There is a clear winner if you ask me, and the answer might surprise you. Disclaimer: it is not a popular opinion.
+
+Without much thought, everybody is just straight adding RSpec to their codebase by default.
+I believe that is not the right thing to do, and here are my reasons why.
+
+Minitest is a minimalistic testing framework that is fast and easy to learn. It doesn't have as many features as RSpec,
+but Minitest is more than adequate for any project. For me, it is a clear winner. Usually, I do not care much what
+most people think or do if I do not believe it is correct.
+
+These are the main reasons why I prefer minitest over RSpec:
+
+# 1\. Speed
+
+In general, Minitest is faster than RSpec when running tests. This means that you can get feedback about your code more quickly.
+Making it easier to find and fix errors and improve the quality of your code.
+
+There are many reasons why minitest is faster than RSpec. First and foremost, minitest is a much smaller and simpler gem than RSpec.
+This means that it takes up less memory and is quicker to load. Simply put, it just has a much smaller codebase than RSpec.
+
+All in all, minitest is no-questions faster. Speed and the ability to re-run the whole test suite locally are of utmost importance for me.
+
+# 2\. Ease of Use
+
+Minitest is more concise, which makes it a more efficient tool. Additionally, it has a more intuitive syntax,
+making the learning process more convenient. It is simpler to use than RSpec, making it a perfect candidate for beginners.
+
+Unfortunately, on the other hand, RSpec is more feature-rich than minitest. It is more popular with developers who favor
+a more 'spec-based' testing approach(having the ability to deep nest `describe/context` blocks). Minitest has no this feature
+by default(you would have to use the `minitest/spec` library). But this feature comes with a price:
+RSpec is definitely more difficult to learn than minitest.
+
+# 3\. Compatibility
+
+Minitest has better compatibility with a broader range of Ruby versions. Ruby compatibility aside,
+keeping your project up to date is essential: having framework and libraries updated to their most recent versions is critical.
+It can be for security reasons or for performance benefits. Anyway, newer versions of libraries should be more mature,
+have more bugs fixed, and are usually better performing.
+
+To have a nice update cadence, you need good test coverage. You have to know if your code is still working as expected after
+updating or upgrading the library. I saw many projects stuck with Rails couple of versions behind the main.
+A team struggling with upgrading the Rails version is usually an unpleasant sight to see.
+
+There are 2 main obstacles preventing people from regularly upgrading:
+
+1.  There is not enough coverage. You just do not know if you can safely upgrade without breaking something
+2.  3rd party code or library is incompatible with the most recent version of Ruby or Rails
+
+When it comes to the second point, RSpec is sometimes causing compatibility issues once the most recent version of Rails is released.
+It takes some time for the RSpec team to catch up and get up to speed to release support for the most current version of Rails.
+Being a standard part of Rails distribution as a default testing library, minitest has no such issues.
+
+# 4\. Rails team is using it
+
+For so many different reasons, it is essential to stick to the conventions the Rails team is using themselves
+([I wrote about this before](/blog/2021-03-15-modern-rails-manifesto)). I am a big proponent and a follower of the "convention over configuration" principle.
+It is already there; nothing is required to be installed in addition. Minitest is the default and assumed testing framework
+for the new Rails applications. If you believe in Rails philosophy and its way of doing things, that should be enough reason alone.
