@@ -11,7 +11,8 @@
     "lint": "next lint --fix --dir pages --dir components --dir lib --dir layouts --dir scripts",
     "prepare": "husky install",
     "cypress": "cypress run",
-    "test": "jest __tests__ --watch",
+    "test": "jest __tests__",
+    "test_watch": "jest __tests__ --watch",
     "test_e2e_live": "cypress open",
     "test_e2e": "start-server-and-test start_test http://localhost:3003 cypress"
   },

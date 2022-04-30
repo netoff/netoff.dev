@@ -19,14 +19,15 @@ export async function getStaticProps() {
 import BlogLayout from '@/layouts/BlogLayout'
 
 export default function Blog({ posts, initialDisplayPosts, pagination }) {
+  const title = "Dusan's Programming Blog"
   return (
     <BlogLayout>
-      <PageSEO title="Blog" description={siteMetadata.description} />
+      <PageSEO title={title} description={siteMetadata.description} />
       <ListLayout
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
-        title="All Posts"
+        title={title}
       />
     </BlogLayout>
   )
