@@ -10,8 +10,10 @@ jobs:
         uses: actions/checkout@v2
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
+      - name: Install modules
+        run: yarn
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          build: npm run next build
-          start: npm run next start -p 3003
+          build: yarn next build
+          start: yarn next start -p 3003
