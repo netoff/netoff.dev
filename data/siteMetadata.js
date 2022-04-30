@@ -1,9 +1,14 @@
+import dedent from 'dedent'
+
 const siteMetadata = {
   handle: 'netoff',
   title: 'netoff | Software Engineer',
   author: 'Dusan Pantelic',
   headerTitle: 'netoff.dev',
-  description: 'Dusan Pantelic - Software Engineer for life',
+  description: dedent`
+    My name is Dusan. I’ve been in Software Engineering and Web Development for more than half of my life.
+    You can read more about my programming adventures.
+  `,
   language: 'en-us',
   theme: 'dark', // system, dark or light
   siteUrl: 'https://netoff.dev',
