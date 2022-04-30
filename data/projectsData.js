@@ -13,7 +13,7 @@ const projectsData = [
     It is specially crafted for non-technical founders wanting to build or maintain their own product.
     Learn by example. Run all your codes directly in browser. No special dev environment setup needed.`,
     imgSrc: '/images/ruby_school_logo.png',
-    href: 'https://rubysoft.dev/ruby_school',
+    href: 'https://rubyschool.dev',
   },
 ]
 
