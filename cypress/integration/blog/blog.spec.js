@@ -20,7 +20,7 @@ describe("netoff's blog", () => {
       expect(loc.pathname).to.eq('/blog')
     })
 
-    cy.get('article:first').find('h3').find('a:first').click()
+    cy.get('article:first').find('h2').find('a:first').click()
     cy.get('h1').should('have.class', 'text-3xl')
     cy.contains('View on GitHub')
   })

@@ -71,7 +71,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                   </dl>
                   <div className="space-y-3 xl:col-span-3">
                     <div>
-                      <h3 className="text-2xl leading-8 tracking-tight">
+                      <h2 className="text-2xl leading-8 tracking-tight">
                         <Link href={href} className="text-gray-900 dark:text-gray-100">
                           <div className="font-bold">{title}</div>
                         </Link>
@@ -83,7 +83,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                             />
                           ) : null}
                         </div>
-                      </h3>
+                      </h2>
 
                       <div className="flex flex-wrap">
                         {tags.map((tag) => (
