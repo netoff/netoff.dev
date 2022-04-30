@@ -1,4 +1,4 @@
-import dedent from 'dedent'
+const dedent = require('dedent')
 
 const siteMetadata = {
   handle: 'netoff',
