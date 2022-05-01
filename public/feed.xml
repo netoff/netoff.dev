@@ -20,7 +20,19 @@ Without much thought, everybody is just straight adding RSpec to their codebase 
 </description>
     <pubDate>Mon, 09 May 2022 00:00:00 GMT</pubDate>
     <author>me@netoff.dev (Dusan Pantelic)</author>
-    <category>testing</category><category>tdd</category><category>minitest'</category><category>rspec</category>
+    <category>testing</category><category>tdd</category><category>minitest</category><category>rspec</category>
+  </item>
+
+  <item>
+    <guid>https://netoff.dev/blog/2022-05-01-automated-testing-everything-you-need-to-know</guid>
+    <title>Automated testing: Everything you need to know</title>
+    <link>https://netoff.dev/blog/2022-05-01-automated-testing-everything-you-need-to-know</link>
+    <description>Recently I&#39;ve been asked what constitutes good Software testing. How can you learn to write good tests?
+Easily if you stick to a couple of principles and adhere to them when writing your tests.
+</description>
+    <pubDate>Sun, 01 May 2022 00:00:00 GMT</pubDate>
+    <author>me@netoff.dev (Dusan Pantelic)</author>
+    <category>testing</category><category>tdd</category>
   </item>
 
   <item>

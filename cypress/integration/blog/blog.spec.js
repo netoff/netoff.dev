@@ -34,7 +34,7 @@ describe("netoff's blog", () => {
   it('displays about page', () => {
     cy.get('#mobile-menu-button').click()
     cy.get('#mobile-menu').contains('About').click()
-    cy.get('h1.text-3xl').contains('About')
+    cy.get('h1.text-3xl').contains('About Dusan Pantelic')
   })
 
   it('displays cookies policy', () => {
