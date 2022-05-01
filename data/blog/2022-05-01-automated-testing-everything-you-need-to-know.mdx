@@ -4,7 +4,6 @@ title: 'Automated testing: Everything you need to know'
 date: '2022-05-01'
 summary: |
   Recently I've been asked what constitutes good Software testing. How can you learn to write good tests?
-
   Easily if you stick to a couple of principles and adhere to them when writing your tests.
 thumbnail:
   id: czu8X_gfpP0
@@ -12,16 +11,16 @@ thumbnail:
 tags: ['testing', 'tdd']
 ---
 
+import Mailto from 'react-protected-mailto'
+
 <TOCInline toc={props.toc} indentDepth={2} asDisclosure />
 
 Recently I've been asked what constitutes good Software testing. How can you learn to write good tests?
-
 Easily if you stick to a couple of principles and adhere to them when writing your tests.
 
 # Introduction
 
 Modern development is impossible without possessing a set of good testing skills. Unfortunately, we take testing for granted.
-
 In reality, it is such a big problem for so many people. With testing being so hard to do right,
 we usually accept the bare minimum for testing. That is why the topic is more important and relevant than ever.
 Everybody should be capable of writing good tests.
@@ -31,15 +30,13 @@ Everybody should be capable of writing good tests.
 When talking about testing, most programmers usually refer to automated testing. For most parts, we can ignore manual testing
 in this context. More specifically, when programmers talk about testing, they are usually talking about Test-Driven Development (TDD)
 
-## Automated testing
-
 Automated testing involves using a program to automate the tasks of a human tester. It is the process of using code itself
 to test software. With automated testing, tests become part of the codebase, and they are run together with a typical build
 process. This means tests can run automatically on every change(commit/push). Other than adding tests to ensure that new
 functionality is covered, existing tests ensures that already implemented functionalities are still working as expected.
 It is called **regression testing** ([what is regression?](https://en.wikipedia.org/wiki/Software_regression)).
 
-## Test-Driven Development
+## What is TDD (Test-Driven Development)?
 
 **Test-Driven Development** (**TDD**) is just one step further in this same direction of testing automation. It is a software
 development practice and philosophy that relies on the repeated execution of a small set of tests to produce software
@@ -49,9 +46,8 @@ ensures the final step is easy: Refactoring the code (**blue**) is a simple task
 test suite. It will immediately tell you if you broke something with your refactor.
 
 TDD emphasizes the need to have code tested even before having code. TDD is not just a testing philosophy; it becomes
-a software design approach. Actual requirements should shape and create your APIs.
-
-TDD is popular because it is very developer-friendly, adding a dose of pleasure to writing new code. While practicing TDD,
+a software design approach. Actual requirements should shape and create your APIs. TDD is popular because it
+is very developer-friendly, adding a dose of pleasure to writing new code. While practicing TDD,
 you can get the results very quickly. Although TDD is not a silver bullet, it is a powerful tool to help you write better code faster.
 
 # Basic principles of having good tests
@@ -97,8 +93,8 @@ parts of the code interact with each other. This helps identify potential proble
 ## Test Structure
 
 If you are not sure if you are adding value with your tests, there is a painless way to verify that test is good. You need
-to follow a well-defined structure with every test. The structure of a test is defined with an easy-to-remember phrase: -**arrange**-**act**–**assert**.
-Arrange–act–assert is another trichotomy for software testing (other than previously mentioned (red–green–blue)[#test-driven-development]).
+to follow a well-defined structure with every test. The structure of a test is defined with an easy-to-remember phrase: -**arrange**-**act**-**assert**.
+Arrange-act-assert is another trichotomy for software testing (other than previously mentioned [red-green-blue](#what-is-tdd-test-driven-development).
 
 The principles of the arrange-act-assert methodology can be applied to any type of software testing but are often used in the context
 of test-driven development (TDD). In short, the steps are as follows:
@@ -124,4 +120,5 @@ stub the things you need to. Your tests may become difficult to read and maintai
 even become irrelevant. Second, be sure to test both mock and real objects equally. Ensure the appropriate amount of integration
 tests when and where needed. If you only test the mocked objects, you may not catch all of the errors in your code.
 
-If you still believe testing is too tricky after reading it all, [drop me a line](mailto:me@netoff.dev) for a free consultation.
+If you still believe testing is too tricky after reading it all, email <Mailto email="me@netoff.dev" className="link" />,
+and drop me a line for a free consultation.
