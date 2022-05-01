@@ -16,7 +16,6 @@ You can read more about my programming adventures.</description>
     <title>minitest vs. RSpec: Which one is better?</title>
     <link>https://netoff.dev/blog/2022-05-09-minitest-vs-rspec-which-one-is-better</link>
     <description>There is a clear winner if you ask me, and the answer might surprise you. Disclaimer: it is not a popular opinion.
-Without much thought, everybody is just straight adding RSpec to their codebase by default. I believe that is not the right thing to do, and here are my reasons why.
 </description>
     <pubDate>Mon, 09 May 2022 00:00:00 GMT</pubDate>
     <author>me@netoff.dev (Dusan Pantelic)</author>
