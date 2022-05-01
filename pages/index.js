@@ -51,7 +51,6 @@ export default function Home() {
           <div
             id="profile"
             className="z-10 mx-6 mb-8 w-full rounded-lg bg-white shadow-2xl lg:mx-0 lg:mb-0 lg:w-3/5 lg:rounded-l-lg"
-            style={{ backgroundColor: 'rgba(255, 255, 255, .7)' }}
           >
             <MobileNav />
 
@@ -92,7 +91,7 @@ export default function Home() {
                       className="rounded-full bg-gray-200"
                     />
                   </div>
-                  <h1 className="mx-auto text-left text-3xl font-bold lg:mx-0">{title}</h1>
+                  <h1 className="mx-auto text-left text-2xl font-bold lg:mx-0">{title}</h1>
                 </div>
                 <div className="mx-auot border-b border-blue-500 opacity-50 lg:mx-8 "></div>
                 <h2 className="text-xl lg:ml-8">
