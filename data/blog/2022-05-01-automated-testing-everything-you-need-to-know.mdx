@@ -1,0 +1,124 @@
+---
+authors: [dusan]
+title: 'Automated testing: Everything you need to know'
+date: '2022-05-01'
+summary: |
+  Recently I've been asked what constitutes good Software testing. How can you learn to write good tests?
+  Easily if you stick to a couple of principles and adhere to them when writing your tests.
+thumbnail:
+  id: czu8X_gfpP0
+  author: Giordano Rossoni
+tags: ['testing', 'tdd']
+---
+
+import Mailto from 'react-protected-mailto'
+
+<TOCInline toc={props.toc} indentDepth={2} asDisclosure />
+
+Recently I've been asked what constitutes good Software testing. How can you learn to write good tests?
+Easily if you stick to a couple of principles and adhere to them when writing your tests.
+
+# Introduction
+
+Modern development is impossible without possessing a set of good testing skills. Unfortunately, we take testing for granted.
+In reality, it is such a big problem for so many people. With testing being so hard to do right,
+we usually accept the bare minimum for testing. That is why the topic is more important and relevant than ever.
+Everybody should be capable of writing good tests.
+
+## What is Automated testing?
+
+When talking about testing, most programmers usually refer to automated testing. For most parts, we can ignore manual testing
+in this context. More specifically, when programmers talk about testing, they are usually talking about Test-Driven Development (TDD)
+
+Automated testing involves using a program to automate the tasks of a human tester. It is the process of using code itself
+to test software. With automated testing, tests become part of the codebase, and they are run together with a typical build
+process. This means tests can run automatically on every change(commit/push). Other than adding tests to ensure that new
+functionality is covered, existing tests ensures that already implemented functionalities are still working as expected.
+It is called **regression testing** ([what is regression?](https://en.wikipedia.org/wiki/Software_regression)).
+
+## What is TDD (Test-Driven Development)?
+
+**Test-Driven Development** (**TDD**) is just one step further in this same direction of testing automation. It is a software
+development practice and philosophy that relies on the repeated execution of a small set of tests to produce software
+that is known to be correct. It is also known as the **red**-**green**-**blue** (or red-green-**refactor**) cycle. The gist is that
+you should write small tests that fail(**red**) and then write just enough code to make them pass(**green**). Having tests
+ensures the final step is easy: Refactoring the code (**blue**) is a simple task when you can quickly re-run the whole
+test suite. It will immediately tell you if you broke something with your refactor.
+
+TDD emphasizes the need to have code tested even before having code. TDD is not just a testing philosophy; it becomes
+a software design approach. Actual requirements should shape and create your APIs. TDD is popular because it
+is very developer-friendly, adding a dose of pleasure to writing new code. While practicing TDD,
+you can get the results very quickly. Although TDD is not a silver bullet, it is a powerful tool to help you write better code faster.
+
+# Basic principles of having good tests
+
+Now that you know what testing is, how can you learn to write a good test? Just follow this simple structure described here.
+It applies to any testing framework or library. They are all equal and the same. If you know how to write a good test with minitest,
+you can also do the same good job with RSpec. The same applies to jest vs. Jasmine, or for that matter, any other testing library or framework.
+
+## Good Coverage
+
+Code coverage is a metric used in software testing to measure the degree to which the source code of a program has been exercised
+by a particular test suite. It measures the amount of code tested relative to the total amount of code in the program. The code
+coverage metric is usually expressed as a percentage of how many lines of code have been covered.
+
+Code coverage can measure the quality of a software test suite. A high code coverage number means that the test suite is
+likely to have exercised most or all of the source code in the program. This can indicate that the program is well tested and
+ready for production.
+
+Code coverage can also be used to identify areas of the source code that have not been tested.
+This can identify potential bugs or areas that need further testing.
+
+Unfortunately, for some people, this becomes just a number. They start to think about it, saying,
+"_I have this much, and you have that much coverage._" It means nothing without a proper understanding of the underlying subject.
+The intrinsic meaning of coverage is understanding the array of potential states and transitions between them your program can have.
+More states and transitions you cover, the better. I was writing about this topic in my [previous article](/blog/2022-04-25-feature-flags-the-good-and-bad#extreme-complexity)
+
+## Test Relevance
+
+The relevance of software testing can be determined in several ways. One measure is how well the test aligns with the business
+objectives. Another consideration is how well the test covers the range of conditions and scenarios in using the software.
+Relevance is also affected by how thoroughly the test cases have been designed and how they exercise the software's functions and
+features.
+
+To illustrate this with an example: you should never write an equivalent of `assert(1 + 1 == 2)`. This is self-explanatory,
+but it is surprising how often I have seen something similar. Each test should add value to your whole test suite.
+Do not write a test just for the sake of having a test. You are wasting lines of code this way.
+
+An easy way to ensure your tests are relevant is properly using test-driven development (TDD). With TDD, you first write the test
+and then write the code to make the test pass. This ensures that the test is relevant to the code because the test is written
+before the code. The test cases are created the way it forces you to think about how the code is used and how the different
+parts of the code interact with each other. This helps identify potential problems and design defects early in the development process.
+
+## Test Structure
+
+If you are not sure if you are adding value with your tests, there is a painless way to verify that test is good. You need
+to follow a well-defined structure with every test. The structure of a test is defined with an easy-to-remember phrase: -**arrange**-**act**-**assert**.
+Arrange-act-assert is another trichotomy for software testing (other than previously mentioned [red-green-blue](#what-is-tdd-test-driven-development).
+
+The principles of the arrange-act-assert methodology can be applied to any type of software testing but are often used in the context
+of test-driven development (TDD). In short, the steps are as follows:
+
+1. **Arrange** the preconditions of a system to set the desired state
+
+2. **Act** on a system to trigger the transition to a new state
+
+3. **Assert** that the desired end state is achieved
+
+This simple three-step process helps ensure that tests are well-defined and that the results can be accurately assessed.
+It also helps prevent any accidental or undesired side effects, which can be challenging to troubleshoot and fix.
+
+## Testing in isolation
+
+To have good tests, you have to write tests in isolation. To achieve isolation, you need to use **mocking** and **stubbing** techniques.
+Mocks allow you to create fake objects that return set values when queried. Stubbing enables you to replace calls to specific
+functions, isolate external services and APIs, and replace them with predefined values. This way, you can test your code without
+making any external API calls.
+
+There are some things to keep in mind when using mock objects and stubbing. First, make sure that you only mock and
+stub the things you need to. Your tests may become difficult to read and maintain if you mock or stub too much. Tests might
+even become irrelevant. Second, be sure to test both mock and real objects equally. Ensure the appropriate amount of integration
+tests when and where needed. If you only test the mocked objects, you may not catch all of the errors in your code.
+
+If you still believe testing is too tricky after reading it all, email <Mailto email="me@netoff.dev" className="link" />,
+and drop me a line for a free consultation.
