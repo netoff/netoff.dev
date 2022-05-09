@@ -8,9 +8,20 @@ You can read more about my programming adventures.</description>
       <language>en-us</language>
       <managingEditor>me@netoff.dev (Dusan Pantelic)</managingEditor>
       <webMaster>me@netoff.dev (Dusan Pantelic)</webMaster>
-      <lastBuildDate>Sun, 01 May 2022 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Mon, 09 May 2022 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://netoff.dev/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://netoff.dev/blog/2022-05-09-minitest-vs-rspec-which-one-is-better</guid>
+    <title>minitest vs. RSpec: Which one is better?</title>
+    <link>https://netoff.dev/blog/2022-05-09-minitest-vs-rspec-which-one-is-better</link>
+    <description>There is a clear winner if you ask me, and the answer might surprise you. Disclaimer: it is not a popular opinion.
+</description>
+    <pubDate>Mon, 09 May 2022 00:00:00 GMT</pubDate>
+    <author>me@netoff.dev (Dusan Pantelic)</author>
+    <category>testing</category><category>tdd</category><category>minitest</category><category>rspec</category>
+  </item>
+
   <item>
     <guid>https://netoff.dev/blog/2022-05-01-automated-testing-everything-you-need-to-know</guid>
     <title>Automated testing: Everything you need to know</title>
