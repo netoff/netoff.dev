@@ -1,0 +1,78 @@
+---
+authors: [dusan]
+title: 'Using Rails 7 with YJIT'
+summary: |
+  YJIT is a new JIT compiler for Ruby 3.0. With Ruby 3.2 YJIT support finally stabilized. In this article, I'll show you how to use it with Rails 7.
+date: '2023-02-01'
+tags: ['tips', 'ruby', 'yjit']
+thumbnail:
+  id: gLw5g2wTxyk
+  author: Ishfaq Ahmed
+---
+
+YJIT is a new JIT compiler for Ruby 3.0. With Ruby 3.2 YJIT support finally stabilized.
+In this article, I'll show you how to use it on macOS with brew, rbenv, ruby-build and Rails 7.
+
+<TOCInline toc={props.toc} indentDepth={2} asDisclosure />
+
+## What is YJIT?
+
+[YJIT](https://github.com/Shopify/yjit) stands for "Yet Another Ruby JIT" and is a just-in-time (JIT) compiler for the
+Ruby programming language, developed by Shopify. It is a runtime optimization technique
+that aims to improve the performance of Ruby applications by compiling Ruby code into machine code
+on the fly, rather than interpreting it each time it is executed. JIT compilers in general
+can provide a significant boost to application performance by allowing the code to be executed
+faster and with less overhead.
+
+Starting from Ruby 3.2 YJIT is [not experimental](https://shopify.engineering/ruby-yjit-is-production-ready)
+anymore, so it is now suitable for production use. It is a promising development
+if you are looking to squeeze and extract the last bit of performance out of the Ruby engine.
+
+## How to install YJIT with rbenv and Ruby 3.2
+
+[rbenv](rbenv) is Ruby version manager of my choice and I'll show you how to install YJIT with it.
+
+**To build YJIT you need rust tools installed on your system**(YJIT is written in [Rust](https://www.rust-lang.org)).
+If you don't have them, you can install them with [rustup](https://rustup.rs/).
+Just follow the instructions on their [website](https://rustup.rs/) and you should be good to go.
+
+Once you have rust tools installed, you can proceed with installing YJIT with rbenv.
+Make sure you update ruby-build first. If you are on macOS, and you originally installed rbenv
+using [homebrew](https://brew.sh/), you can run:
+
+```bash
+brew update && brew upgrade ruby-build
+```
+
+Finally you can install Ruby 3.2 with YJIT support(by default YJIT won't be included).
+Run the following rbenv command:
+
+```bash
+RUBY_CONFIGURE_OPTS="--enable-yjit" rbenv install 3.2.0
+```
+
+Make sure to include `RUBY_CONFIGURE_OPTS` flag! This will enable YJIT support.
+
+## How to use YJIT with Rails 7
+
+One simple trick you can use is to modify the [shebang](<https://en.wikipedia.org/wiki/Shebang_(Unix)>)
+of the `bin/rails` file and pass the `--yjit` param to the Ruby executable. Instead of just running
+it in default interpreted mode.
+
+The top of your `bin/rails` file should look something like this:
+
+```ruby
+#!/usr/bin/env ruby --yjit
+```
+
+After this change, you can run your Rails application with YJIT enabled by running `bin/rails server` or
+`bin/rails s` as usual.
+
+As a bonus tip, you can also enable YJIT for all `bin/` scripts inside your Rails project
+by adding `--yjit` param. Other files you should modify are:
+
+- `bin/rake`
+- `bin/bundle`
+- `bin/setup`
+
+Congratulations 🎉 Now your whole Rails project and all the commands will run with YJIT enabled.
