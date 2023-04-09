@@ -28,7 +28,7 @@ export async function getStaticProps(context) {
   }
 }
 
-const title = 'Dusan Pantelic - Software Engineer'
+const title = 'Dusan Pantelic'
 
 export default function Home() {
   return (
@@ -120,7 +120,7 @@ export default function Home() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  CET - Central European Time
+                  CET Timezone
                 </a>
                 )
               </p>
@@ -136,18 +136,23 @@ export default function Home() {
                   I’ve been in Software Engineering and Web Development for more than half of my
                   life. I have
                   <span className="ml-1 font-bold">15+ years</span> of experience with
-                  <span className="ml-1 font-bold">Ruby on Rails</span>, and
-                  <span className="ml-1 font-bold">7+ years</span> of experience with
-                  <span className="ml-1 font-bold">React/JS.</span>
+                  <a
+                    href="https://rubyonrails.org/"
+                    target="_blank"
+                    className="link ml-1 font-bold"
+                    rel="noreferrer"
+                  >
+                    Ruby on Rails
+                  </a>
+                  .
                 </li>
               </ul>
 
               <div className="mt-8 lg:ml-8">
-                <Mailto email="me@netoff.dev" className="button" />
-                &nbsp;or&nbsp;
-                <a href="https://calendly.com/netoff/15min" className="button">
-                  Schedule a Meeting
-                </a>
+                <h1 className="mx-auto mb-4 text-left text-2xl font-bold lg:mx-0">
+                  Want to work with me?
+                </h1>
+                Email <Mailto email="me@netoff.dev" className="button" />
               </div>
 
               <div className="items-left mx-auto mt-8 flex flex-wrap justify-between lg:ml-8 lg:pb-0">

@@ -9,5 +9,6 @@
   "react": "React",
   "postgresql": "PostgreSQL",
   "heroku": "Heroku",
-  "amazonwebservices": "AWS"
+  "amazonwebservices": "AWS",
+  "flutter": "Flutter"
 }
