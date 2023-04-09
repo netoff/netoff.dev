@@ -28,7 +28,7 @@ export async function getStaticProps(context) {
   }
 }
 
-const title = 'Dusan Pantelic - Software Engineer'
+const title = 'Dusan Pantelic'
 
 export default function Home() {
   return (
@@ -93,7 +93,7 @@ export default function Home() {
                   </div>
                   <h1 className="mx-auto text-left text-2xl font-bold lg:mx-0">{title}</h1>
                 </div>
-                <div className="mx-auot border-b border-blue-500 opacity-50 lg:mx-8 "></div>
+                <div className="mx-auto border-b border-blue-500 opacity-50 lg:mx-8 "></div>
                 <h2 className="text-xl lg:ml-8">
                   aka <span className="font-bold">netoff</span>
                 </h2>
@@ -120,7 +120,7 @@ export default function Home() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  CET - Central European Time
+                  CET Timezone
                 </a>
                 )
               </p>
@@ -136,32 +136,40 @@ export default function Home() {
                   I’ve been in Software Engineering and Web Development for more than half of my
                   life. I have
                   <span className="ml-1 font-bold">15+ years</span> of experience with
-                  <span className="ml-1 font-bold">Ruby on Rails</span>, and
-                  <span className="ml-1 font-bold">7+ years</span> of experience with
-                  <span className="ml-1 font-bold">React/JS.</span>
+                  <a
+                    href="https://rubyonrails.org/"
+                    target="_blank"
+                    className="link ml-1 font-bold"
+                    rel="noreferrer"
+                  >
+                    Ruby on Rails
+                  </a>
+                  and other tech:
+                  <div className="items-left mx-auto mt-2 flex flex-wrap justify-between">
+                    {Object.entries(skills).map(([lang, title], i) => (
+                      <div className="skill" key={i}>
+                        <Image
+                          title={title}
+                          alt={title}
+                          width="32"
+                          height="32"
+                          src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${lang}/${lang}-original.svg`}
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </li>
               </ul>
 
-              <div className="mt-8 lg:ml-8">
-                <Mailto email="me@netoff.dev" className="button" />
-                &nbsp;or&nbsp;
-                <a href="https://calendly.com/netoff/15min" className="button">
-                  Schedule a Meeting
-                </a>
-              </div>
-
-              <div className="items-left mx-auto mt-8 flex flex-wrap justify-between lg:ml-8 lg:pb-0">
-                {Object.entries(skills).map(([lang, title], i) => (
-                  <div className="skill" key={i}>
-                    <Image
-                      title={title}
-                      alt={title}
-                      width="32"
-                      height="32"
-                      src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${lang}/${lang}-original.svg`}
-                    />
-                  </div>
-                ))}
+              <div className="mt-4 lg:ml-8">
+                <h1 className="mx-auto mb-1 text-left text-2xl font-bold lg:mx-0">Work with me</h1>
+                <p>
+                  Do you want somebody reliable you can count on for your project? Look no further:
+                </p>
+                <div className="mt-4">
+                  <span className="hidden lg:inline-block">Email</span>{' '}
+                  <Mailto email="me@netoff.dev" className="button" />
+                </div>
               </div>
 
               <div className="mt-4 text-xs text-base lg:ml-8">
