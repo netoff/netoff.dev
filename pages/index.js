@@ -139,8 +139,8 @@ export default function Home() {
               </ul>
 
               <div className="mt-2 lg:ml-8 ">
-                <Link href={'/about'} className="link">
-                  Read more
+                <Link href={'/about'}>
+                  <a className="link">Read more</a>
                 </Link>{' '}
                 about myself...
               </div>
