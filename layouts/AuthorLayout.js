@@ -7,7 +7,7 @@ export default function AuthorLayout({ children, frontMatter }) {
   const { handle, name, avatar, occupation, company, email, twitter, linkedin, github } =
     frontMatter
 
-  const title = 'About Dusan Pantelic'
+  const title = 'About Dusan'
 
   return (
     <>

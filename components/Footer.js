@@ -23,9 +23,7 @@ export default function Footer() {
           <div>{` • `}</div>
           <div>{`Copyright © ${new Date().getFullYear()}`}</div>
           <div>{` • `}</div>
-          <Link href="/cookies_policy">
-            <a className="underline">Cookies Policy</a>
-          </Link>
+          <div>This website does not use cookies</div>
         </div>
       </div>
     </footer>

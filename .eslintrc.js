@@ -6,7 +6,6 @@ module.exports = {
     node: true,
     es6: true,
     'cypress/globals': true,
-    'jest/globals': true,
   },
   extends: [
     'eslint:recommended',
@@ -24,17 +23,6 @@ module.exports = {
     'react/no-unescaped-entities': 0,
   },
   overrides: [
-    {
-      files: ['__tests__/**'],
-      plugins: ['jest'],
-      rules: {
-        'jest/no-disabled-tests': 'warn',
-        'jest/no-focused-tests': 'error',
-        'jest/no-identical-title': 'error',
-        'jest/prefer-to-have-length': 'warn',
-        'jest/valid-expect': 'error',
-      },
-    },
     {
       files: ['cypress/**'],
       plugins: ['cypress'],

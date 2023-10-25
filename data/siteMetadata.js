@@ -6,8 +6,8 @@ const siteMetadata = {
   author: 'Dusan Pantelic',
   headerTitle: 'netoff.dev',
   description: dedent`
-    My name is Dusan. I’ve been in Software Engineering and Web Development for more than half of my life.
-    You can read more about my programming adventures.
+    My name is Dusan. I’ve been doing Web Development for more than half of my life.
+    You can read more about my programming endeavors.
   `,
   language: 'en-us',
   theme: 'dark', // system, dark or light
@@ -19,12 +19,7 @@ const siteMetadata = {
   email: 'me@netoff.dev',
   github: 'https://github.com/netoff',
   locale: 'en-US',
-  analytics: {
-    // If you want to use an analytics provider you have to add it to the
-    // content security policy in the `next.config.js` file.
-    // supports plausible, simpleAnalytics, umami or googleAnalytics
-    googleAnalyticsId: process.env.NEXT_PUBLIC_GA_ID, // e.g. UA-000000-2 or G-XXXXXXX
-  },
+
   newsletter: {
     // supports mailchimp, buttondown, convertkit
     // Please add  your .env file and modify it according to your selection

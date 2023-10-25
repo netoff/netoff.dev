@@ -25,25 +25,9 @@ describe("netoff's blog", () => {
     cy.contains('View on GitHub')
   })
 
-  it('displays projects page', () => {
-    cy.get('#mobile-menu-button').click()
-    cy.get('#mobile-menu').contains('Projects').click()
-    cy.get('h1.text-3xl').contains('Projects')
-  })
-
   it('displays about page', () => {
     cy.get('#mobile-menu-button').click()
     cy.get('#mobile-menu').contains('About').click()
-    cy.get('h1.text-3xl').contains('About Dusan Pantelic')
-  })
-
-  it('displays cookies policy', () => {
-    cy.contains('Accept All').click()
-    cy.get("[href='/cookies_policy']").click()
-    cy.get('h1#cookie-policy').contains('COOKIE POLICY')
-    cy.contains('Back').click()
-    cy.location().should((loc) => {
-      expect(loc.pathname).to.eq('/')
-    })
+    cy.get('h1.text-3xl').contains('About Dusan')
   })
 })
