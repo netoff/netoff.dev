@@ -7,7 +7,7 @@ const siteMetadata = {
   headerTitle: 'netoff.dev',
   description: dedent`
     My name is Dusan. I’ve been doing Web Development for more than half of my life.
-    You can read more about my programming endeavours.
+    You can read more about my programming endeavors.
   `,
   language: 'en-us',
   theme: 'dark', // system, dark or light
