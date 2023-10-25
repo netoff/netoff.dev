@@ -139,7 +139,10 @@ export default function Home() {
               </ul>
 
               <div className="mt-2 lg:ml-8 ">
-                <Link href={'/about'}>Read more</Link> about myself...
+                <Link href={'/about'} className="link">
+                  Read more
+                </Link>{' '}
+                about myself...
               </div>
 
               <div className="mt-4 lg:mt-8 lg:ml-8">
