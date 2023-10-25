@@ -5,7 +5,6 @@ import { getMDXComponent } from 'mdx-bundler/client'
 import CustomLink from './Link'
 import TOCInline from './TOCInline'
 import Pre from './Pre'
-import { BlogNewsletterForm } from './NewsletterForm'
 
 import AuthorLayout from '../layouts/AuthorLayout'
 import BlogLayout from '../layouts/BlogLayout'
@@ -24,7 +23,6 @@ export const MDXComponents = {
   TOCInline,
   a: CustomLink,
   pre: Pre,
-  BlogNewsletterForm: BlogNewsletterForm,
   wrapper: ({ components, layout, ...rest }) => {
     const Layout = Layouts[layout]
     return <Layout {...rest} />

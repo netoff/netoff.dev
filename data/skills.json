@@ -1,14 +1,12 @@
-{
-  "html5": "HTML",
-  "css3": "CSS",
-  "git": "git",
-  "github": "GitHub",
-  "ruby": "Ruby",
-  "rspec": "RSpec",
-  "javascript": "JavaScript",
-  "react": "React",
-  "postgresql": "PostgreSQL",
-  "heroku": "Heroku",
-  "amazonwebservices": "AWS",
-  "flutter": "Flutter"
-}
+[
+  ["ruby", "ruby-original", "Ruby"],
+  ["rails", "rails-plain", "Rails"],
+  ["git", "git-original", "git"],
+  ["github", "github-original", "GitHub"],
+  ["html5", "html5-original", "HTML"],
+  ["css3", "css3-original", "CSS"],
+  ["rspec", "rspec-original", "RSpec"],
+  ["javascript", "javascript-original", "JavaScript"],
+  ["react", "react-original", "React"],
+  ["amazonwebservices", "amazonwebservices-original", "AWS"]
+]
