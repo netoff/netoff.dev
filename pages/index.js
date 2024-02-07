@@ -152,8 +152,9 @@ export default function Home() {
                   Look no further:
                 </p>
                 <div className="mt-4">
-                  <span className="hidden lg:inline-block">Email</span>{' '}
-                  <Mailto email="me@netoff.dev" className="button" />
+                  <a href="https://rubymule.com" className="button">
+                    Hire me for FREE
+                  </a>
                 </div>
               </div>
 

@@ -8,5 +8,5 @@
   ["rspec", "rspec-original", "RSpec"],
   ["javascript", "javascript-original", "JavaScript"],
   ["react", "react-original", "React"],
-  ["amazonwebservices", "amazonwebservices-original", "AWS"]
+  ["amazonwebservices", "amazonwebservices-plain-wordmark", "AWS"]
 ]
