@@ -146,14 +146,9 @@ export default function Home() {
               </div>
 
               <div className="mt-4 lg:mt-8 lg:ml-8">
-                <h1 className="mx-auto mb-1 text-left text-2xl font-bold lg:mx-0">Work with me?</h1>
-                <p>
-                  Do you want somebody reliable you can count on day and night for your project?
-                  Look no further:
-                </p>
                 <div className="mt-4">
-                  <a href="https://rubymule.com" className="button">
-                    Hire me for FREE
+                  <a href="mailto:dusan@netoff.dev" className="button">
+                    Email me
                   </a>
                 </div>
               </div>
@@ -162,16 +157,6 @@ export default function Home() {
                 &copy; {new Date().getFullYear()} Dusan Pantelic | This website does not use cookies
               </div>
             </div>
-          </div>
-
-          <div className="hidden w-full lg:block lg:w-2/5">
-            <Image
-              className="rounded-none shadow-2xl lg:rounded-lg lg:rounded-l-none"
-              priority
-              src={developerImage}
-              title="Dusan Pantelic"
-              alt="Dusan Pantelic"
-            />
           </div>
         </div>
       </div>
