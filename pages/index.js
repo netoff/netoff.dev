@@ -5,8 +5,8 @@ import Link from 'next/link'
 import Mailto from 'react-protected-mailto'
 
 import Favicon from '../components/Favicon'
-import developerImage from '/public/images/nubelson-fernandes-UcYBL5V0xWQ-unsplash.jpg'
-import me from '/public/images/dusan.png'
+import developerImage from '/public/images/background.jpg'
+import me from '/public/images/dusan12.jpeg'
 
 import MobileNav from '@/components/MobileNav'
 
@@ -50,7 +50,7 @@ export default function Home() {
         <div className="mx-auto mt-12 flex h-auto max-w-4xl flex-wrap items-center lg:my-0 lg:h-screen">
           <div
             id="profile"
-            className="z-10 mx-6 mb-8 w-full rounded-lg bg-white shadow-2xl lg:mx-0 lg:mb-0 lg:w-3/5 lg:rounded-l-lg"
+            className="z-10 mx-6 mb-8 w-full rounded-l-lg bg-white shadow-2xl lg:mx-0 lg:mb-0 lg:w-3/5"
           >
             <MobileNav />
 
@@ -147,8 +147,8 @@ export default function Home() {
 
               <div className="mt-4 lg:mt-8 lg:ml-8">
                 <div className="mt-4">
-                  <a href="mailto:dusan@netoff.dev" className="button">
-                    Email me
+                  <a href="mailto:netoff_@outlook.com" className="button">
+                    Email me: netoff_@outlook.com
                   </a>
                 </div>
               </div>
@@ -157,6 +157,16 @@ export default function Home() {
                 &copy; {new Date().getFullYear()} Dusan Pantelic | This website does not use cookies
               </div>
             </div>
+          </div>
+
+          <div className="hidden w-full lg:block lg:w-2/5">
+            <Image
+              className="rounded-none shadow-2xl lg:rounded-lg lg:rounded-l-none"
+              priority
+              src={developerImage}
+              title="Dusan Pantelic"
+              alt="Dusan Pantelic"
+            />
           </div>
         </div>
       </div>
